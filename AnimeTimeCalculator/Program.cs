@@ -11,12 +11,16 @@ namespace AnimeTimeCalculator
         static void Main(string[] args)
         {
             int cap;
-            int dias;
-            int horas;
-            int minutos;
-            cap = capInput();
 
+            while(true)
+            {
+                cap = capInput();
+                animeTime(cap);
 
+                Console.ReadLine();
+
+                clearScreen();
+            }
         }
 
         static int capInput()
@@ -37,7 +41,8 @@ namespace AnimeTimeCalculator
                     Console.WriteLine("\n---------------------------");
                     Console.WriteLine("Valor introducido no valido");
                     Console.WriteLine("---------------------------\n");
-                    //Console.WriteLine(e);
+                    Console.ReadLine();
+                    clearScreen();
                 }
 
                 if (userCapInput != 0)
@@ -51,14 +56,25 @@ namespace AnimeTimeCalculator
             return userCapInput;
         }
     
-        static void animeTime()
+        static void animeTime(int capitulos)
         {
+            int dias;
+            int horas;
+            int minutos;
 
+            minutos = capitulos * 25;
+            horas = minutos / 60;
+            dias = horas / 24;
+            horas %= 24;
+            minutos %= 60;
+
+
+            Console.WriteLine($"\nSe tardará un aproximado de {dias} días, {horas} horas y {minutos} minutos en ver ese anime.");
         }
 
-        void clearScreen()
+        static void clearScreen()
         {
-            clearScreen();
+            Console.Clear();
         }
     }
 }
