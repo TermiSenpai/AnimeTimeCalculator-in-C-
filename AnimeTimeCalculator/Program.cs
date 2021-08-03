@@ -16,6 +16,7 @@ namespace AnimeTimeCalculator
             int minutos;
             cap = capInput();
 
+
         }
 
         static int capInput()
@@ -48,6 +49,16 @@ namespace AnimeTimeCalculator
             while (!validInput);
 
             return userCapInput;
+        }
+    
+        static void animeTime()
+        {
+
+        }
+
+        void clearScreen()
+        {
+            clearScreen();
         }
     }
 }
